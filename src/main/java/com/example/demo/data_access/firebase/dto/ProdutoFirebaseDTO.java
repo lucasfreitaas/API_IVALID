@@ -10,7 +10,7 @@ public class ProdutoFirebaseDTO {
     private String name;
     private Double oldPrice;
     private Integer quantity;
-    private String image;
+    private String urlImagem;
     private Double newPrice;
     private Integer percentualDesc;
     private String status;

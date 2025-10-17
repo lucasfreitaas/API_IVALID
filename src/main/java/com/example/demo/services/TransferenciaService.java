@@ -38,6 +38,12 @@ public class TransferenciaService {
 
         firebaseRepository.salvarProdutos(produtosFirebase);
 
+        for (Object[]  produto: produtosOracle){
+            java.math.BigDecimal produto_idBd = (java.math.BigDecimal) produto[0];
+            Long produto_id = produto_idBd.longValue();
+            oracleRepository.marcarComoSincronizado(produto_id);
+        }
+
         System.out.println("Transferência finalizada!");
     }
 
@@ -56,8 +62,7 @@ public class TransferenciaService {
 
         firebaseDTO.setQuantity(quantityBd.intValue());
 
-        Number imageIdNum = (Number) dados[5];
-        firebaseDTO.setImage(String.valueOf(imageIdNum.longValue()));
+        firebaseDTO.setUrlImagem((String) dados[5]);
 
         firebaseDTO.setNewPrice(0.0);
 
