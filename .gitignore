@@ -33,4 +33,4 @@ build/
 .vscode/
 
 # Arquivo específico com credenciais de serviço
-firebase-service-account.json
+serviceAccountKey.json
